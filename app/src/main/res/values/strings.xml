@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Settings</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="app_title">E-ducation</string>
+    <string name="config">Configurações</string>
+    <string name="conta">Conta</string>
+    <string name="privacidade">Privacidade</string>
+    <string name="tema">Tema</string>
+    <string name="outros">Outros</string>
+    <string name="seunome">Seu nome</string>
+    <string name="notifymsg">Você deseja receber notificações</string>
+    <string name="escuro">Modo escuro</string>
+    <string name="convidarAmigo">Convidar um amigo</string>
+    <string name="block">Bloquear que as outras pessoas vejam sua foto de perfil</string>
+</resources>
