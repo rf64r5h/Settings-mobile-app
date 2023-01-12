@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceManager
 
-class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
+class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener { // Definição de interface para um retorno de chamada a ser invocado toda vez que uma preferência compartilhada é alterada
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,7 +15,7 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
         if (savedInstanceState == null) {
             supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.settings, SettingsFragment())
+                .replace(R.id.settings, SettingsFragment()) // Adiciona as preferências no FrameLayout da Activity Settings
                 .commit()
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -30,16 +30,16 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
         }
     }
 
-    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
+    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) { //Manipulação das preferencias, nesse caso estamos observando a key ´dark_mode´ que é um toggle nas preferencias, que ativa ou desativa o modo escuro
         if (key == "dark_mode") {
-            val prefs = sharedPreferences?.getBoolean(key, false)
+            val prefs = sharedPreferences?.getBoolean(key, false) //Pega o valor do toggle, pór padrão é false
 
             when(prefs) {
                 true ->{
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES) //Se o toggle for true, ele ativa o modo escuro
             }
                 else -> {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO) //Se o toggle for false, ele desativa o modo escuro
                 }
             }
 
